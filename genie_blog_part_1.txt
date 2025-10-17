@@ -1,0 +1,16 @@
+Introduction to Databricks genie.
+
+GETTING INSIGHTS FROM STRUCTURED DATA.
+
+Databricks genie is a text to SQL agent that is available within the databricks environment.
+Databricks is a service that can be used in the major cloud platforms suchs as Azure and AWS.
+
+Before we jump into the working of genie , let us have a small understanding on unity catalog.
+
+#TO DO @manikandan , should we put in a small intro on unity catalog? atleast to the level of table and column level metadata?
+
+Aspects of structured data
+- when we have a table , that has multiple rows and column and I want an LLM to get me insights on it , the best way is to generate an SQL statement that will query my table.
+- that is where the roles of LLMs come into picture.
+- we can use any of the latest gpt/gemini/claude models and generate a SQL statement.
+- once i have the SQL generated, i can use the generated SQL and run the SQL on the table , get the required answer.
