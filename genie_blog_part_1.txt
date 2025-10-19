@@ -1,6 +1,90 @@
-Introduction to Databricks genie.
+In the Era of artificial inteligence and language models , where many enterpirises acorss the industry have data in a strucuted format it 
+becomes very esstential to get the best insights from this tabular data to make better decisions.
+In this context , a leading data anlalytics company Databricks has introducded databricks genie. a powerful text-2-sql agent.
 
-GETTING INSIGHTS FROM STRUCTURED DATA.
+
+Lets dive into the details on why Databricks genie is a game changer
+
+1. No Code Setup: 
+    Data experts can configure genie spaces without any code in a very user friendly manner.
+    Best insights will come out with the right ocnfiguration of Table . column metadata , sample SQLs , instructions etc.
+
+2. In built state and session management:
+    Databricks genie has an inbuilt contextual awareness i.e. follow up quesions can be asked which retains the context of the conversation.
+    Users can get into a new session by clicking on the "new chat" option which start a new session , with no context and a fresh start.
+
+3. interactive visualizations: 
+    Databricks offers an interactive visualization where the visualization can be configured, i.e. type of chart, colour of the chart etc.
+
+4. Trusted Assets:
+    Databricks offers samples SQL, UDF functions that can be added to a genie space which can be used when the user wants to specify a SQL / python fucntion that is to be uesd for specific functions.
+
+5. Genie space level prompts:
+    instructions can be provided on the genie space that tell how the space should be answer.
+    Any general instructions such as " ask follow up questions when the user question is vague " etc can be configured at this level.
+
+Configuring a databricks genie space:
+
+The better the configuration on the databricks genie space , the better is the result to the user.
+
+In part 1 of this blog let us see the intial setup of the databricks genie workspace, we will dive into more deailed examples in upcoming blogs.
+
+1. Metadata configuration :
+    Databricks as an environment provides the concept of unity catalog where metadata can be configured.
+    Metadata is the heart and brain of how Databricks genie system functions.
+    There are 2 types of metadata configuration
+    
+    1. Table level metadata configuration:
+        As of 10/18/2025 20 tables can be configured on the databricks environment.
+        A basic table level metadata configuraiton includes a description of 
+        - what the table does / What the table is meant for
+        - What are the different dimensions on the table
+        - What are the different metrics on the table and a defnition of them
+
+        For a table that has data about emails , the below would consititue each of the above points
+        - what the table does ( if the table has details about email , then a desciption of 
+                                what kind of emails are present 
+                                what kind of users/ audience are the emails caters to 
+                                is there any pattern in which the emails are sent)
+        - What are the different dimensions on the table 
+                                (This would be what are the different dimensions that are present in the table 
+                                - Email Type 
+                                - audience
+                                etc )
+        - What are the different metrics that can be answered using the table
+                                ( This would be metrics such as email open rate, email click through rate and formulas for each of them )
+
+
+        All the above needs to be done so that genie understands the exact table to look for when questions related to any of the metrics are asked
+        With the above configuraiton genie will also understand the formula to be used 
+        This was any enterprise wide custom formula can be configured.
+
+    2. Column level metadata configuraiton:
+        Metadata should be configured at each column on the table 
+        A basic column level metadata configuraiton would include
+        - Categorical columns:
+            - What kind of data is present in the column
+            - what are the different categories present in the column
+            - what is the defnition of each of hte categories 
+            - what is the hierarchy of each of the categories
+        
+        For a column about emails , the below would be constitute each of the above points
+
+        - What kind of data is present in the columns (If the column is about emails . a description that this column is about emails is needed)
+        - what are the different categories present in the table ( This would mean , the type of email such as marketing emails , sales email , internal emails etc)
+        - what is the defnition of each of the categories ( This would mean, the defnition of each of the categories , what is marekting emails , what are sales email , what are internal emails)
+        # TO DO above needs some modification
+
+    3. Instructions on the genie space:
+        
+
+
+
+
+
+
+
+
 
 Databricks genie is a text to SQL agent that is available within the databricks environment.
 Databricks is a service that can be used in the major cloud platforms suchs as Azure and AWS.
@@ -9,8 +93,13 @@ Before we jump into the working of genie , let us have a small understanding on 
 
 #TO DO @manikandan , should we put in a small intro on unity catalog? atleast to the level of table and column level metadata?
 
-Aspects of structured data
+Aspects of structured data and text 2 SQL agents.
 - when we have a table , that has multiple rows and column and I want an LLM to get me insights on it , the best way is to generate an SQL statement that will query my table.
 - that is where the roles of LLMs come into picture.
 - we can use any of the latest gpt/gemini/claude models and generate a SQL statement.
 - once i have the SQL generated, i can use the generated SQL and run the SQL on the table , get the required answer.
+
+Things to consider.
+- how does the agent know what are the values in each column 
+- how does the agent know what the table is about
+- how 
