@@ -75,31 +75,18 @@ In part 1 of this blog let us see the intial setup of the databricks genie works
         - what is the defnition of each of the categories ( This would mean, the defnition of each of the categories , what is marekting emails , what are sales email , what are internal emails)
         # TO DO above needs some modification
 
-    3. Instructions on the genie space:
-        
+2 Instructions on the genie space:
+    - Instructions on the genie space act like prompts to a large language model
+    - General instructions on how the genie space needs to behave should be provided in the instructions
+    - In case the data is divided by region , you can specify , "if the region is not present in the users question, ask a follow up question and ask for region"
+    - in case you want default time periods to be present on all the questions , it can be provided , ex: " the default time period to be considered for all questions until specified by the user is 12 months".
+    Any general information should be specified here.
 
-
-
-
-
-
-
-
-
-Databricks genie is a text to SQL agent that is available within the databricks environment.
-Databricks is a service that can be used in the major cloud platforms suchs as Azure and AWS.
-
-Before we jump into the working of genie , let us have a small understanding on unity catalog.
-
-#TO DO @manikandan , should we put in a small intro on unity catalog? atleast to the level of table and column level metadata?
-
-Aspects of structured data and text 2 SQL agents.
-- when we have a table , that has multiple rows and column and I want an LLM to get me insights on it , the best way is to generate an SQL statement that will query my table.
-- that is where the roles of LLMs come into picture.
-- we can use any of the latest gpt/gemini/claude models and generate a SQL statement.
-- once i have the SQL generated, i can use the generated SQL and run the SQL on the table , get the required answer.
-
-Things to consider.
-- how does the agent know what are the values in each column 
-- how does the agent know what the table is about
-- how 
+3. Sample SQLs and UDFs 
+    - Sample SQLs can be provided on the genie space.
+    - Each sample SQL must be parameterized ( as stated above, in case the data is divided region wise , region can be a parameter)
+        - This way , one SQL query will be working for all regions, incase a region is an exception and follows a differnt rule , it can be specified in another SQL query
+    - genie also allows us to add user defined functions.
+    - User defined functions are present at a unity catalog level.
+    # TO DO more on UDFs in the upcoming parts 
+    # TO DO , implement all the UDFs tried , SQL UDFs , python UDFs , TVFs , detailed explanation on each of them.
