@@ -89,4 +89,4 @@ In part 1 of this blog let us see the intial setup of the databricks genie works
     - genie also allows us to add user defined functions.
     - User defined functions are present at a unity catalog level.
     # TO DO more on UDFs in the upcoming parts 
-    # TO DO , implement all the UDFs tried , SQL UDFs , python UDFs , TVFs , detailed explanation on each of them.
+    # TO DO , implement all the UDFs tried , SQL UDFs , python UDFs , TVFs , detailed explanation on each of them.git
